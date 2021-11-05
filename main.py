@@ -8,3 +8,12 @@ def show_alert(e):
 
 
 document['btn'].bind('click', show_alert)
+
+
+# I/O in the same time
+def show_output(e):
+    console.log(e.target.value)
+    document['output'].textContent = e.target.value
+
+
+document['text'].bind('input', show_output)
