@@ -1,4 +1,5 @@
 from browser import document, alert, console
+from browser.template import Template
 
 
 # show_alert
@@ -17,3 +18,8 @@ def show_output(e):
 
 
 document['text'].bind('input', show_output)
+
+
+# Template Variable
+Template(document['hi-to']).render(name="Mohammad")
+Template(document['sum']).render(a=10, b=5)
