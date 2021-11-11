@@ -9,6 +9,16 @@
     <script src="brython_stdlib.js"></script>
     <script src="main.py" type="text/python"></script>
   </head>
+
+  <style>
+    #rotate-box {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      margin: 60px;
+    }
+  </style>
+
   <body onload="brython()">
     <!-- Alert & Insert -->
     <h2 id="output-hello"></h2>
@@ -34,5 +44,10 @@
     <input type="file" id="file-upload" />
     <br />
     <textarea id="file-text" cols="60" rows="10"></textarea>
+    <hr />
+
+    <!-- Animation -->
+    <button id="rotate-btn">Click to rotate</button>
+    <div id="rotate-box"></div>
   </body>
 </html>

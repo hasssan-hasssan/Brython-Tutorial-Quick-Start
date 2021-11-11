@@ -1,4 +1,4 @@
-from browser import document, alert, console, ajax, window
+from browser import document, alert, console, ajax, window, html
 from browser.template import Template
 
 
@@ -61,3 +61,17 @@ def file_reader(e):
 
 
 document['file-upload'].bind('input', file_reader)
+
+
+# Animation
+box = document['rotate-box']
+angle = 10
+
+
+def change(e):
+    global angle
+    box.style.transform = f"rotate({angle}deg)"
+    angle += 10
+
+
+document['rotate-btn'].bind('click', change)
