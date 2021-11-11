@@ -1,4 +1,4 @@
-from browser import document, alert, console, ajax
+from browser import document, alert, console, ajax, window
 from browser.template import Template
 
 
@@ -45,3 +45,19 @@ def get_joke(e):
 
 
 document['joke-btn'].bind('click', get_joke)
+
+
+# load file
+
+def on_load(reader):
+    document['file-text'].value = reader.target.result
+
+
+def file_reader(e):
+    file = document['file-upload'].files[0]
+    reader = window.FileReader.new()
+    reader.readAsText(file)
+    reader.bind('load', on_load)
+
+
+document['file-upload'].bind('input', file_reader)
