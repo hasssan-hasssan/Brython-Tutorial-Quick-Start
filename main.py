@@ -75,3 +75,28 @@ def change(e):
 
 
 document['rotate-btn'].bind('click', change)
+
+
+# Local storage
+
+storage = window.localStorage
+
+if storage.getItem('item'):
+    document['show-saved'].textContent = storage.getItem('item')
+
+
+def add_item(e):
+    get_item = document['get-item'].value
+    storage.setItem('item', get_item)
+    document['show-saved'].textContent = get_item
+    alert('You added an object in local storage')
+
+
+def remove_item(e):
+    storage.removeItem('item')
+    document['show-saved'].textContent = ""
+    alert('You removed an object from local storage')
+
+
+document['add-btn'].bind('click', add_item)
+document['remove-btn'].bind('click', remove_item)
