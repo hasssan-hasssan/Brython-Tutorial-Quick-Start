@@ -48,7 +48,6 @@ document['joke-btn'].bind('click', get_joke)
 
 
 # load file
-
 def on_load(reader):
     document['file-text'].value = reader.target.result
 
@@ -78,7 +77,6 @@ document['rotate-btn'].bind('click', change)
 
 
 # Local storage
-
 storage = window.localStorage
 
 if storage.getItem('item'):
@@ -101,8 +99,8 @@ def remove_item(e):
 document['add-btn'].bind('click', add_item)
 document['remove-btn'].bind('click', remove_item)
 
-# draw with js and brython
 
+# draw with js and brython
 def draw_br(e):
     height = document['height'].value
     width = document['width'].value
@@ -110,7 +108,4 @@ def draw_br(e):
     window.draw_js(height, width, color)
 
 
-
-
 document['draw-btn'].bind('click', draw_br)
-
