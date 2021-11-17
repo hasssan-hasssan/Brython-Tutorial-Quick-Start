@@ -109,3 +109,15 @@ def draw_br(e):
 
 
 document['draw-btn'].bind('click', draw_br)
+
+
+# draw with js and brython
+
+def draw_br_2(height, width, color):
+    shap = document['shap2']
+    shap.attrs['style'] = f"background-color: {color}"
+    shap.width = width
+    shap.height = height
+
+
+window.draw_br_2 = draw_br_2
