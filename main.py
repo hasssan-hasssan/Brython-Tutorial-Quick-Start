@@ -100,3 +100,17 @@ def remove_item(e):
 
 document['add-btn'].bind('click', add_item)
 document['remove-btn'].bind('click', remove_item)
+
+# draw with js and brython
+
+def draw_br(e):
+    height = document['height'].value
+    width = document['width'].value
+    color = document['color'].value
+    window.draw_js(height, width, color)
+
+
+
+
+document['draw-btn'].bind('click', draw_br)
+
